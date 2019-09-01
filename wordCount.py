@@ -1,5 +1,14 @@
+########################################################################################
+#    Title: test.py
+#    Original Author: Abder-Rahman Ali
+#    Date: July 1, 2016
+#    Availability: https://code.tutsplus.com/tutorials/counting-word-frequency-in-a-file-using-python--cms-25965
+#
+########################################################################################
+
 import sys
 import re
+import os
 
 #Get terminal arguments
 input_document = sys.argv[1]    #File we are reading too
@@ -11,6 +20,7 @@ number_of_repeated_word = {}
 all_text_in_document = open(input_document)
 #Turn all the words lower case so it'll be easier to look at the words
 lowercase_words = all_text_in_document.read().lower()
+
 #Grab all the words that are actually words
 #i.e. has a non letter before and after to be considered a word
 match_pattern = re.findall(r'\b[a-z]{1,50}\b', lowercase_words)
